@@ -83,8 +83,6 @@ if ("fatal: not a git repository" in status.stdout):
 if ("Untracked files" or "Changes to be committed:" in status.stdout):
     add = git_add()
     print("----->", add.returncode)
-    if add.returncode == RusultCode.OK:
-        print('Something wrong')
 
     commit_result = git_commit("first try")
     push = git_push()
