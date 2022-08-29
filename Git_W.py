@@ -86,6 +86,8 @@ if ("Untracked files" or "Changes not staged for commit:" or "Changes to be comm
     print("commit ok")
     git_push()
     print("push ok")
+else:
+    print("no changes in files")
 
 
 
