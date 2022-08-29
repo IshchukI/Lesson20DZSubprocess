@@ -80,7 +80,7 @@ if ("fatal: not a git repository" in status.stdout):
     git_create_branch()
     status = git_status()
 
-if ("Untracked files" or "Changes not staged for commit:" or "Changes to be committed:" in status.stdout):
+if ("Untracked files" in status.stdout or "Changes not staged for commit:" in status.stdout or "Changes to be committed:" in status.stdout):
     add = git_add()
     print("add ok")
     commit_result = git_commit("first try")
@@ -92,7 +92,6 @@ else:
 
 
 
-print("Untracked files" or "Changes not staged for commit:" or "Changes to be committed:" in "status.stdout")
 
 
 
