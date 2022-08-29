@@ -7,6 +7,11 @@ class GitCommand(Enum):
     ORIGIN = "https://github.com/IshchukI/Lesson20DZSubprocess.git"
 
 
+class RusultCode(Enum):
+    OK = 0
+    ERROR = 1
+
+
 def git_init():
     init = subprocess.run("git init",
                             stdout=subprocess.PIPE,
@@ -32,6 +37,7 @@ def git_create_branch():
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE,
                             encoding="utf-8")
+
 
 
 def git_status():
@@ -61,6 +67,7 @@ def git_push():
                                    stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE,
                                    encoding="utf-8")
+    return git_push()
 
 
 status = git_status()
@@ -75,8 +82,11 @@ if ("fatal: not a git repository" in status.stdout):
 
 if ("Untracked files" or "Changes to be committed:" in status.stdout):
     add = git_add()
+    if add.returncode == RusultCode.OK:
+        print('Something wrong')
+
     commit_result = git_commit("first try")
-    git_push()
+    push = git_push()
 
 
 
