@@ -71,6 +71,7 @@ if ("fatal: not a git repository" in status.stdout):
     git_init()
     git_add_origin()
     git_create_branch()
+    status = git_status()
 
 if ("Untracked files"  or "Changes not staged for commit" or "Changes to be committed:" in status.stdout):
     add = git_add()
