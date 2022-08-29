@@ -67,7 +67,7 @@ def git_push():
                                    stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE,
                                    encoding="utf-8")
-    return git_push()
+    # return git_push()
 
 
 status = git_status()
@@ -85,7 +85,7 @@ if ("Untracked files" or "Changes not staged for commit:" or "Changes to be comm
     print("ad ok")
     commit_result = git_commit("first try")
     print("commit ok")
-    push = git_push()
+    git_push()
     print("push ok")
 
 
