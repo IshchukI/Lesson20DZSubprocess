@@ -92,7 +92,7 @@ else:
 
 
 
-
+print("Untracked files" or "Changes not staged for commit:" or "Changes to be committed:" in "status.stdout")
 
 
 
