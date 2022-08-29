@@ -26,13 +26,12 @@ def git_add_origin():
                             encoding="utf-8")
     print(check_origin.stdout)
 
+
 def git_create_branch():
     branch = subprocess.run("git branch -M main",
                             stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE,
                             encoding="utf-8")
-
-
 
 
 def git_status():
@@ -64,11 +63,6 @@ def git_push():
                                    encoding="utf-8")
 
 
-
-
-
-
-
 status = git_status()
 print(status.stdout)
 if ("fatal: not a git repository" in status.stdout):
@@ -77,10 +71,10 @@ if ("fatal: not a git repository" in status.stdout):
     git_init()
     git_add_origin()
     git_create_branch()
+
 if ("Untracked files"  or "Changes not staged for commit" or "Changes to be committed:" in status.stdout):
     add = git_add()
     commit_result = git_commit("first try")
-    status = git_status()
     print(status.stdout)
     git_push()
 
