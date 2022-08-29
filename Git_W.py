@@ -63,7 +63,7 @@ def git_commit(message):
     return commit_result
 
 def git_push():
-    commit_result = subprocess.run("git push -u origin main",
+    commit_result = subprocess.run("git push origin main",
                                    stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE,
                                    encoding="utf-8")
