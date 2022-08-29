@@ -77,16 +77,14 @@ if ("fatal: not a git repository" in status.stdout):
     git_init()
     git_add_origin()
     git_create_branch()
-else:
-    if ("Untracked files"  or "Changes not staged for commit" or "Changes to be committed:" in status.stdout):
-        add = git_add()
-        commit_result = git_commit("first try")
-        status = git_status()
-        print("______________-")
-        print(status.stdout)
-        git_push()
+if ("Untracked files"  or "Changes not staged for commit" or "Changes to be committed:" in status.stdout):
+    add = git_add()
+    commit_result = git_commit("first try")
+    status = git_status()
+    print(status.stdout)
+    git_push()
 
-print(GitCommand.COMMIT.value.format("\"qwr\""))
+
 
 
 
