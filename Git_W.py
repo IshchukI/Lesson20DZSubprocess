@@ -71,6 +71,7 @@ def git_push():
 
 
 status = git_status()
+print(status.stdout)
 if ("fatal: not a git repository" in status.stdout):
     print("--->git is still uninitialized")
     print("--->git  uninitializing")
