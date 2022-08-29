@@ -8,8 +8,8 @@ class GitCommand(Enum):
 
 
 class RusultCode(Enum):
-    OK = 0
-    ERROR = 1
+    OK = 1
+    ERROR = 0
 
 
 def git_init():
