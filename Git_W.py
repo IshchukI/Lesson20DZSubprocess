@@ -76,6 +76,7 @@ if ("Untracked files"  or "Changes not staged for commit" or "Changes to be comm
     add = git_add()
     commit_result = git_commit("first try")
     status = git_status()
+    print("______________")
     print(status.stdout)
     git_push()
 
