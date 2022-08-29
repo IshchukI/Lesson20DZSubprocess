@@ -74,13 +74,7 @@ if ("fatal: not a git repository" in status.stdout):
 
 if ("Untracked files"  or "Changes not staged for commit" or "Changes to be committed:" in status.stdout):
     add = git_add()
-    status = git_status()
-    print("______________")
-    print(status.stdout)
     commit_result = git_commit("first try")
-    status = git_status()
-    print("______________")
-    print(status.stdout)
     git_push()
 
 
