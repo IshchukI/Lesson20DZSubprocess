@@ -82,9 +82,9 @@ if ("fatal: not a git repository" in status.stdout):
 
 if ("Untracked files" or "Changes not staged for commit:" or "Changes to be committed:" in status.stdout):
     add = git_add()
-    if status.returncode == RusultCode.ERROR:
+    if status.returncode == RusultCode.OK:
         print('Something wrong')
-    
+
 
     commit_result = git_commit("first try")
     print("commit ok")
