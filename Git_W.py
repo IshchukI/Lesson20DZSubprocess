@@ -82,9 +82,9 @@ if ("fatal: not a git repository" in status.stdout):
 
 if ("Untracked files" or "Changes not staged for commit:" or "Changes to be committed:" in status.stdout):
     add = git_add()
-    print(status.returncode)
+    print(add.returncode)
     print(RusultCode.OK.value)
-    if status.returncode == RusultCode.OK.value:
+    if add.returncode == RusultCode.ERROR.value:
         print('Something wrong')
 
 
